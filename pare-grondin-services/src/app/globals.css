@@ -112,6 +112,26 @@ html {
   max-width: 65ch;
 }
 
+/* Button hover variants — CSS-only, safe for Server Components */
+.btn-accent {
+  background: var(--accent);
+  transition: background 0.18s ease, box-shadow 0.18s ease;
+}
+.btn-accent:hover {
+  background: var(--accent-dark);
+  box-shadow: 0 4px 16px rgba(201, 123, 46, 0.30);
+}
+
+.btn-outline-primary {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  transition: background 0.18s ease;
+}
+.btn-outline-primary:hover {
+  background: var(--primary-muted);
+}
+
 /* ─────────────────────────────────────────
    Article body prose styles
    Used by blog/[slug]/page.tsx article body

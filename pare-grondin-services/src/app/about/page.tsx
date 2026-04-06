@@ -269,16 +269,7 @@ export default function AboutPage() {
           <div className="text-center">
             <Link
               href="/booking"
-              className="inline-flex items-center justify-center px-7 py-3.5 rounded-lg font-body font-semibold text-white transition-all hover:shadow-lg"
-              style={{ background: "var(--accent)" }}
-              onMouseOver={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.background =
-                  "var(--accent-dark)";
-              }}
-              onMouseOut={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.background =
-                  "var(--accent)";
-              }}
+              className="btn-accent inline-flex items-center justify-center px-7 py-3.5 rounded-lg font-body font-semibold text-white"
             >
               Book a Free Consultation
             </Link>
@@ -364,35 +355,13 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/booking"
-              className="inline-flex items-center justify-center px-7 py-3.5 rounded-lg font-body font-semibold text-white transition-all hover:shadow-lg"
-              style={{ background: "var(--accent)" }}
-              onMouseOver={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.background =
-                  "var(--accent-dark)";
-              }}
-              onMouseOut={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.background =
-                  "var(--accent)";
-              }}
+              className="btn-accent inline-flex items-center justify-center px-7 py-3.5 rounded-lg font-body font-semibold text-white"
             >
               Book a Consultation
             </Link>
             <Link
               href="/quiz"
-              className="inline-flex items-center justify-center px-7 py-3.5 rounded-lg font-body font-semibold transition-all"
-              style={{
-                border: "2px solid var(--primary)",
-                color: "var(--primary)",
-                background: "transparent",
-              }}
-              onMouseOver={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.background =
-                  "var(--primary-muted)";
-              }}
-              onMouseOut={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.background =
-                  "transparent";
-              }}
+              className="btn-outline-primary inline-flex items-center justify-center px-7 py-3.5 rounded-lg font-body font-semibold"
             >
               Take the Quiz
             </Link>
