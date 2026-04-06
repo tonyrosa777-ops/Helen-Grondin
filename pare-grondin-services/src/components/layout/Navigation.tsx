@@ -9,6 +9,7 @@ import { siteConfig } from "@/data/site";
 const navLinks = [
   { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
+  { label: "Service Areas", href: "/service-areas" },
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
   { label: "Testimonials", href: "/testimonials" },
@@ -85,6 +86,13 @@ export default function Navigation() {
 
           {/* Desktop CTAs */}
           <div className="hidden md:flex items-center gap-3">
+            <Link
+              href="/free-guide"
+              className="px-4 py-2 rounded-lg font-body font-semibold text-sm transition-colors"
+              style={{ color: "var(--primary)", opacity: 0.85 }}
+            >
+              📋 Free Guide
+            </Link>
             <Link
               href="/quiz"
               className="px-4 py-2 rounded-lg font-body font-semibold text-sm border border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary-muted)] transition-colors"
@@ -198,6 +206,14 @@ export default function Navigation() {
 
               {/* Drawer CTAs */}
               <div className="px-6 pb-8 flex flex-col gap-3">
+                <Link
+                  href="/free-guide"
+                  onClick={() => setMobileOpen(false)}
+                  className="w-full text-center px-4 py-3 rounded-lg font-body font-semibold text-sm transition-colors"
+                  style={{ color: "var(--primary)", border: "1px solid var(--border-medium)" }}
+                >
+                  📋 Free Cost Guide
+                </Link>
                 <Link
                   href="/quiz"
                   onClick={() => setMobileOpen(false)}
