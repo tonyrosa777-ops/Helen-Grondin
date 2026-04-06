@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { siteConfig, services } from "@/data/site";
+import { serviceAreas } from "@/data/serviceAreas";
 
 const blogSlugs = [
   "health-sharing-new-hampshire-guide-2026",
@@ -30,17 +31,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
+  const serviceAreaPages: MetadataRoute.Sitemap = serviceAreas.map((area) => ({
+    url: `${base}/service-areas/${area.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
   return [
     // Core pages
-    { url: base,                    lastModified: new Date(), changeFrequency: "weekly",  priority: 1.0 },
-    { url: `${base}/booking`,       lastModified: new Date(), changeFrequency: "weekly",  priority: 0.95 },
-    { url: `${base}/about`,         lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/services`,      lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/quiz`,          lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
-    { url: `${base}/blog`,          lastModified: new Date(), changeFrequency: "weekly",  priority: 0.8 },
-    { url: `${base}/testimonials`,  lastModified: new Date(), changeFrequency: "monthly", priority: 0.75 },
-    { url: `${base}/faq`,           lastModified: new Date(), changeFrequency: "monthly", priority: 0.75 },
-    { url: `${base}/contact`,       lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    { url: base,                       lastModified: new Date(), changeFrequency: "weekly",  priority: 1.0 },
+    { url: `${base}/booking`,          lastModified: new Date(), changeFrequency: "weekly",  priority: 0.95 },
+    { url: `${base}/about`,            lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/services`,         lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/quiz`,             lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/free-guide`,       lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/service-areas`,    lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/blog`,             lastModified: new Date(), changeFrequency: "weekly",  priority: 0.8 },
+    { url: `${base}/testimonials`,     lastModified: new Date(), changeFrequency: "monthly", priority: 0.75 },
+    { url: `${base}/faq`,              lastModified: new Date(), changeFrequency: "monthly", priority: 0.75 },
+    { url: `${base}/contact`,          lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     // /pricing excluded — noindex sales tool, deleted before launch
 
     // Service detail pages
@@ -48,5 +58,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Blog articles
     ...blogPages,
+
+    // Service area city pages (local SEO)
+    ...serviceAreaPages,
   ];
 }

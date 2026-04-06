@@ -9,6 +9,8 @@ const footerLinks = [
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
   { label: "Testimonials", href: "/testimonials" },
+  { label: "Service Areas", href: "/service-areas" },
+  { label: "Free Cost Guide", href: "/free-guide" },
   { label: "Book a Consultation", href: "/booking" },
   { label: "Take the Quiz", href: "/quiz" },
 ];

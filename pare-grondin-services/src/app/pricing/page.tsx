@@ -29,7 +29,8 @@ const comparisonGroups = [
       { feature: "Multi-step quiz with lead capture", starter: false, pro: true, premium: true },
       { feature: "Custom Calendly booking calendar", starter: false, pro: true, premium: true },
       { feature: "NH comparison table", starter: false, pro: true, premium: true },
-      { feature: "Savings calculator", starter: false, pro: true, premium: true },
+      { feature: "Basic savings calculator (on-page, interactive)", starter: false, pro: true, premium: true },
+      { feature: "Enhanced savings calculator + personalized PDF report", starter: false, pro: false, premium: true },
     ],
   },
   {
@@ -43,8 +44,7 @@ const comparisonGroups = [
   {
     category: "Growth",
     rows: [
-      { feature: "10 programmatic service area pages (NH cities)", starter: false, pro: false, premium: true },
-      { feature: "3-sequence email automation suite (post-quiz, post-booking, re-engagement)", starter: false, pro: false, premium: true },
+      { feature: "10 programmatic service area pages (NH cities, local SEO)", starter: false, pro: false, premium: true },
       { feature: "Lead magnet PDF + email gate (passive list builder)", starter: false, pro: false, premium: true },
     ],
   },
