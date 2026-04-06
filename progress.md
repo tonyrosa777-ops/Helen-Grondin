@@ -13,12 +13,12 @@
 
 | Phase | Name | Status |
 |-------|------|--------|
-| 0 | Project Initialization | 🔄 In Progress |
-| 1A | Repo Scan | ⬜ Not Started |
-| 1B | Research + Design System | ⬜ Not Started |
-| 1C | Scaffold | ⬜ Not Started |
-| 1D | Content + Animation (parallel) | ⬜ Not Started |
-| 1E | All Pages | ⬜ Not Started |
+| 0 | Project Initialization | ✅ Complete |
+| 1A | Repo Scan | ✅ Complete |
+| 1B | Research + Design System | ✅ Complete |
+| 1C | Scaffold | ✅ Complete |
+| 1D | Content + Animation (parallel) | ✅ Complete |
+| 1E | All Pages | ✅ Complete |
 
 ---
 
@@ -28,8 +28,8 @@
 - [x] Task 0B — progress.md created
 - [x] Task 0C — .claude/commands/prime.md saved (project-specific /prime configured)
 - [x] Task 0D — design-system.md created (see below)
-- [ ] Task 0E — Next.js scaffold committed
-- [ ] Task 0F — Phase 0 debrief delivered
+- [x] Task 0E — Next.js scaffold committed (05d9de3)
+- [x] Task 0F — Phase 0 debrief delivered
 
 ---
 
@@ -121,3 +121,59 @@
 **Next Session Starts At:** Phase 0D (debrief) → Stage 1A (repo scan) → Stage 1B (design-system.md) → Stage 1C (scaffold)
 
 **Blockers:** See Open Blockers table above. None block build from starting.
+
+---
+
+### Session 2 — 2026-04-05
+**Completed:**
+- Stage 1A: Repo scan done
+  - Gray Method Training: canvas stars/embers system — closest animation match (consulting/quiet/warm axes)
+  - Placed Right Fence: forge canvas — not a match
+  - Andrea Abella Marie: CSS floating particles — fallback option
+  - Gray Method Training HeroParticles.tsx confirmed at: C:\Projects\Gray-Method-Training\gray-method-training\src\components\sections\HeroParticles.tsx
+- Stage 1B: design-system.md confirmed complete (11 sections, all filled, Section 8 axes locked)
+- Stage 1C: Scaffold confirmed at commit 05d9de3 — all routes, site.ts (373 lines), animation wrappers exist
+- site.ts content: 373 lines, all sections written (hero, services, quiz, faqs, testimonials, pricing tiers, blog previews)
+
+**Discovered:**
+- site.ts was written inline during scaffold — content-writer agent not formally spawned but result is equivalent
+- No Hero.tsx or HeroParticles.tsx exist yet — animation-specialist agent needed
+- page.tsx still default Next.js boilerplate — all sections needed
+
+**Completed (Stage 1D — animation-specialist agent):**
+- HeroParticles.tsx: canvas particle system with slow amber/sage fireflies (0.28px/frame max), rising embers, and glimmer stars. Mobile reduces count 50% at <768px breakpoint. rAF cleanup confirmed. `"use client"` first token.
+- CommunityConnectionSVG.tsx: 7 member nodes + 8 bezier paths, Framer Motion sequential stagger (0.5s/node, 0.35s/path). Accent nodes get outer glow rings. Opacity 0.08–0.18 (background texture, not foreground art). `"use client"` first token.
+- Hero.tsx: Full 3-layer hero. `min-h-[100svh]`, `items-start`, `pt-24 md:pt-40`. Split layout (text left, photo placeholder right). All text from site.ts imports. Compliance disclosure above the fold. Both CTAs present (primary → /booking, secondary → tuesdayZoomUrl). TypeScript clean, 0 errors.
+- All 7 validation checks pass.
+
+**Next Session Starts At:** Stage 1F — SEO + AEO (seo-aeo-specialist agent), then Stage 1G Assets (fal.ai blog images), then Stage 1H Pre-Launch Audit
+
+**Blockers:** See Open Blockers table above. None block SEO/asset phases from starting.
+
+---
+
+### Session 2 Completed — 2026-04-05
+
+**All Stage 1E pages committed (11 commits, 096c1e0):**
+- Hero: 3-layer animation (firefly canvas particles + community SVG + stagger text)
+- Navigation + Footer (compliance disclosure, mobile drawer)
+- Homepage: 10 sections assembled, page.tsx wired
+- /about, /contact (RHF form + Google Maps), /faq (accordion + "What If" card)
+- /services index + /services/[slug] × 3
+- /testimonials: 32 NH testimonials, paginated 8/page
+- /quiz: emoji option cards, AnimatePresence, lead capture, savings result
+- /booking: Calendly script-embed with brand colors
+- /pricing: ROI calculator + 5-category comparison chart (INTERNAL ONLY)
+- /blog: 9 AEO articles (NH first-mover), file-based TS data
+- sitemap.ts: 20 URLs
+
+**No shop built** — confirmed by client, removed from scope.
+
+**TypeScript:** `npx tsc --noEmit --skipLibCheck` exits 0 across all files.
+
+**Remaining for Stage 1F-1H:**
+- JSON-LD schema markup (LocalBusiness → ProfessionalService)
+- Open Graph images (opengraph-image.tsx)
+- robots.ts
+- fal.ai blog card images (9 cards + 9 headers)
+- Pre-launch audit (pricing page deletion confirmation, CTA interactivity check)

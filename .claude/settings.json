@@ -18,7 +18,13 @@
       "Bash(mkdir -p app/about app/services app/services/\\\\[slug\\\\] app/pricing app/quiz app/blog app/blog/\\\\[slug\\\\] app/shop app/testimonials app/contact app/faq app/booking app/studio/\\\\[\\\\[...tool\\\\]\\\\] app/api/contact app/api/quiz app/api/printful/products app/api/printful/variants/\\\\[id\\\\] app/api/stripe/checkout app/api/stripe/webhook)",
       "Bash(mkdir -p components/animations components/layout components/sections components/blog components/shop components/ui)",
       "Bash(mkdir -p data lib sanity/lib sanity/schemaTypes)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Read(//c/Projects/Optimus Assets/knowledge/**)",
+      "Read(//c/Projects/Optimus Assets/.claude/agents/build/**)",
+      "Read(//c/Projects/Optimus Assets/.claude/agents/**)",
+      "Read(//c/Projects/Gray-Method-Training/src/**)",
+      "Read(//c/Projects/**)",
+      "Bash(xargs grep:*)"
     ]
   }
 }

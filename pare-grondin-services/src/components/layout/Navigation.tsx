@@ -91,11 +91,17 @@ export default function Navigation() {
             </Link>
           </div>
 
-          {/* Mobile: Book a Call + Hamburger */}
-          <div className="flex md:hidden items-center gap-3">
+          {/* Mobile: Take the Quiz + Book a Call + Hamburger */}
+          <div className="flex md:hidden items-center gap-2">
+            <Link
+              href="/quiz"
+              className="px-3 py-2 rounded-lg font-body font-semibold text-sm border-2 border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary-muted)] transition-colors"
+            >
+              Quiz
+            </Link>
             <Link
               href="/booking"
-              className="px-4 py-2 rounded-lg font-body font-semibold text-sm bg-[var(--accent)] text-white hover:bg-[var(--accent-dark)] transition-colors shadow-sm"
+              className="px-3 py-2 rounded-lg font-body font-semibold text-sm bg-[var(--accent)] text-white hover:bg-[var(--accent-dark)] transition-colors shadow-sm"
             >
               Book a Call
             </Link>
