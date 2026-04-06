@@ -5,6 +5,7 @@ import ServicesPreview from "@/components/sections/ServicesPreview";
 import StatsRow from "@/components/sections/StatsRow";
 import TestimonialsPreview from "@/components/sections/TestimonialsPreview";
 import QuizCTABanner from "@/components/sections/QuizCTABanner";
+import FreeGuideTeaser from "@/components/sections/FreeGuideTeaser";
 import BlogPreview from "@/components/sections/BlogPreview";
 import BookingPreview from "@/components/sections/BookingPreview";
 import FinalCTA from "@/components/sections/FinalCTA";
@@ -19,6 +20,7 @@ export default function Home() {
       <StatsRow />
       <TestimonialsPreview />
       <QuizCTABanner />
+      <FreeGuideTeaser />
       <BlogPreview />
       <BookingPreview />
       <FinalCTA />

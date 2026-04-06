@@ -134,30 +134,13 @@ export default function Hero() {
               </Link>
             </motion.div>
 
-            {/* Free guide nudge */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : {}}
-              transition={{ delay: 0.60, duration: 0.50, ease: EASE }}
-            >
-              <Link
-                href="/free-guide"
-                className="inline-flex items-center gap-2 font-body text-sm font-medium transition-opacity hover:opacity-80"
-                style={{ color: "rgba(139, 191, 160, 0.85)" }}
-              >
-                <span>📋</span>
-                <span>Free guide: NH Insurance vs. Health Sharing — see the real cost difference</span>
-                <span style={{ color: "var(--accent)" }}>→</span>
-              </Link>
-            </motion.div>
-
             {/* Compliance */}
             <motion.p
               className="text-xs font-body italic"
               style={{ color: "rgba(245, 245, 240, 0.38)" }}
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
-              transition={{ delay: 0.68, duration: 0.50, ease: EASE }}
+              transition={{ delay: 0.62, duration: 0.50, ease: EASE }}
             >
               Health sharing is not insurance. Members are not guaranteed benefits.
             </motion.p>
