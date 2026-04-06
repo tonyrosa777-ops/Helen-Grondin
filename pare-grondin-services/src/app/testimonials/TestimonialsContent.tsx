@@ -6,6 +6,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import PageHeroParticles from "@/components/PageHeroParticles";
+import ScrollReveal from "@/components/ScrollReveal";
 
 type ServiceSlug = "individual-membership" | "family-membership" | "senior-supplemental";
 
@@ -305,9 +307,43 @@ const allTestimonials: Testimonial[] = [
     location: "Goffstown, NH",
     service: "family-membership",
   },
+
+  // ── Additional members ────────────────────────────────────────────────────
+  {
+    id: 33,
+    quote:
+      "I had been putting off getting coverage for two years because everything was too expensive. Helen showed me I could be covered for $73 a month. I finally feel like an adult who has a plan. Simple as that.",
+    author: "Andrew M.",
+    location: "Manchester, NH",
+    service: "individual-membership",
+  },
+  {
+    id: 34,
+    quote:
+      "We moved to NH from Massachusetts and our old plan did not transfer. Helen got us set up with Impact within the week. The onboarding was easy, the member portal makes sense, and we have had two telehealth visits already. Really glad we found her.",
+    author: "Rob and Dana S.",
+    location: "Amherst, NH",
+    service: "family-membership",
+  },
+  {
+    id: 35,
+    quote:
+      "I am 67 and my husband is 69. We were paying a lot for our Medigap supplement and feeling like it kept going up for no reason. Helen explained the Impact supplemental option in plain English. We switched three months ago. So far so good, and we are paying less.",
+    author: "Barbara and Jim R.",
+    location: "Wolfeboro, NH",
+    service: "senior-supplemental",
+  },
+  {
+    id: 36,
+    quote:
+      "I referred two of my employees to Helen after setting up my own plan. She treated them the same way she treated me, patient and honest. One of them called me afterward to say thank you. That does not happen if the product is not real.",
+    author: "Tim O.",
+    location: "Epping, NH",
+    service: "individual-membership",
+  },
 ];
 
-const ITEMS_PER_PAGE = 8;
+const ITEMS_PER_PAGE = 9;
 const TOTAL_PAGES = Math.ceil(allTestimonials.length / ITEMS_PER_PAGE);
 
 export default function TestimonialsContent() {
@@ -320,20 +356,27 @@ export default function TestimonialsContent() {
     <>
       {/* ── Hero Header ───────────────────────────────────────────────────── */}
       <section
-        className="bg-[var(--bg-hero)] pt-24 pb-16 md:pt-32 md:pb-20"
+        className="relative bg-[var(--bg-hero)] pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden"
         aria-labelledby="testimonials-heading"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="eyebrow mb-4">What Members Say</p>
-          <h1
-            id="testimonials-heading"
-            className="font-display text-[clamp(2.2rem,4vw,3.5rem)] font-bold text-[var(--text-on-dark)] leading-tight mb-4"
-          >
-            What New Hampshire Members Say
-          </h1>
-          <p className="text-[var(--text-on-dark-muted)] text-lg max-w-xl mx-auto">
-            32 testimonials from real families across the Granite State.
-          </p>
+        <PageHeroParticles />
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <ScrollReveal delay={0}>
+            <p className="eyebrow mb-4">What Members Say</p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.12}>
+            <h1
+              id="testimonials-heading"
+              className="font-display text-[clamp(2.2rem,4vw,3.5rem)] font-bold text-[var(--text-on-dark)] leading-tight mb-4"
+            >
+              What New Hampshire Members Say
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal delay={0.22}>
+            <p className="text-[var(--text-on-dark-muted)] text-lg max-w-xl mx-auto">
+              36 testimonials from real families across the Granite State.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -455,20 +498,26 @@ export default function TestimonialsContent() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────────────────── */}
-      <section className="bg-[var(--bg-hero)] py-20 md:py-28">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-[clamp(1.8rem,3vw,2.8rem)] font-semibold text-[var(--text-on-dark)] mb-4">
-            Ready to become our next success story?
-          </h2>
-          <p className="text-[var(--text-on-dark-muted)] text-lg mb-8 max-w-xl mx-auto">
-            Book a free 30-minute consultation. Helen will show you the exact numbers for your family, your situation, and your current plan.
-          </p>
-          <Link
-            href="/booking"
-            className="inline-block bg-[var(--accent)] hover:bg-[var(--accent-dark)] text-white font-semibold px-8 py-4 rounded-lg text-base transition-colors shadow-lg"
-          >
-            Book a Free Consultation
-          </Link>
+      <section className="relative bg-[var(--bg-hero)] py-20 md:py-28 overflow-hidden">
+        <PageHeroParticles />
+        <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <ScrollReveal delay={0}>
+            <h2
+              className="font-display text-[clamp(1.8rem,3vw,2.8rem)] font-semibold leading-tight mb-4"
+              style={{ color: "var(--text-on-dark)" }}
+            >
+              Ready to become our next success story?
+            </h2>
+            <p className="text-lg mb-8 max-w-xl mx-auto" style={{ color: "var(--text-on-dark-muted)" }}>
+              Book a free 30-minute consultation. Helen will show you the exact numbers for your family, your situation, and your current plan.
+            </p>
+            <Link
+              href="/booking"
+              className="btn-accent inline-block font-semibold px-8 py-4 rounded-lg text-base text-white shadow-lg"
+            >
+              Book a Free Consultation
+            </Link>
+          </ScrollReveal>
         </div>
       </section>
     </>

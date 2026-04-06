@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/data/site";
+import PageHeroParticles from "@/components/PageHeroParticles";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "About Helen Grondin",
@@ -19,27 +21,34 @@ export default function AboutPage() {
     <main>
       {/* ── Section 1: Hero ── */}
       <section
-        className="py-20 md:py-28"
+        className="relative py-20 md:py-28 overflow-hidden"
         style={{ background: "var(--bg-hero)" }}
       >
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="eyebrow mb-4">MEET YOUR ADVOCATE</p>
-          <h1
-            className="font-display font-bold leading-tight mb-6"
-            style={{
-              fontSize: "clamp(2.8rem, 5vw, 4.5rem)",
-              color: "var(--text-on-dark)",
-            }}
-          >
-            I was paying $1,200 a month for health insurance I was afraid to
-            use.
-          </h1>
-          <p
-            className="font-body text-lg leading-relaxed max-w-[52ch]"
-            style={{ color: "var(--text-on-dark-muted)" }}
-          >
-            Then I discovered health sharing. It changed everything.
-          </p>
+        <PageHeroParticles />
+        <div className="relative z-10 max-w-6xl mx-auto px-6">
+          <ScrollReveal delay={0}>
+            <p className="eyebrow mb-4">MEET YOUR ADVOCATE</p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.12}>
+            <h1
+              className="font-display font-bold leading-tight mb-6"
+              style={{
+                fontSize: "clamp(2.8rem, 5vw, 4.5rem)",
+                color: "var(--text-on-dark)",
+              }}
+            >
+              I was paying $1,200 a month for health insurance I was afraid to
+              use.
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal delay={0.24}>
+            <p
+              className="font-body text-lg leading-relaxed max-w-[52ch]"
+              style={{ color: "var(--text-on-dark-muted)" }}
+            >
+              Then I discovered health sharing. It changed everything.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -185,13 +194,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {/* Trust signal 1 */}
-            <div
-              className="rounded-xl p-6 md:p-8 flex flex-col gap-3 hover:shadow-md transition-shadow"
-              style={{
-                background: "var(--bg-card)",
-                border: "1px solid var(--border-subtle)",
-              }}
-            >
+            <ScrollReveal delay={0.05} className="rounded-xl p-6 md:p-8 flex flex-col gap-3 hover:shadow-md transition-shadow" style={{ background: "var(--bg-card)", border: "1px solid var(--border-subtle)" }}>
               <span className="text-3xl">🔍</span>
               <h3
                 className="font-display font-semibold"
@@ -199,25 +202,16 @@ export default function AboutPage() {
               >
                 Deep research before I enrolled
               </h3>
-              <p
-                className="font-body leading-relaxed"
-                style={{ color: "var(--text-secondary)" }}
-              >
+              <p className="font-body leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                 I spent six weeks verifying Impact before I moved my family off
                 Anthem. I read the program guide cover to cover, confirmed their
                 nonprofit status, and interviewed current members. I know what
                 is covered, what is not, and exactly where the limits are.
               </p>
-            </div>
+            </ScrollReveal>
 
             {/* Trust signal 2 */}
-            <div
-              className="rounded-xl p-6 md:p-8 flex flex-col gap-3 hover:shadow-md transition-shadow"
-              style={{
-                background: "var(--bg-card)",
-                border: "1px solid var(--border-subtle)",
-              }}
-            >
+            <ScrollReveal delay={0.15} className="rounded-xl p-6 md:p-8 flex flex-col gap-3 hover:shadow-md transition-shadow" style={{ background: "var(--bg-card)", border: "1px solid var(--border-subtle)" }}>
               <span className="text-3xl">🏠</span>
               <h3
                 className="font-display font-semibold"
@@ -225,26 +219,16 @@ export default function AboutPage() {
               >
                 NH-based, NH-focused
               </h3>
-              <p
-                className="font-body leading-relaxed"
-                style={{ color: "var(--text-secondary)" }}
-              >
+              <p className="font-body leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                 I live in Manchester. I know what Anthem, Ambetter, and Harvard
                 Pilgrim cost in this state right now. When I say health sharing
                 saves NH families money, I mean families I have personally talked
                 to in Concord, Nashua, Portsmouth, and Keene.
               </p>
-            </div>
+            </ScrollReveal>
 
-            {/* Trust signal 3 */}
-            {/* [DEMO COPY — pending client review] */}
-            <div
-              className="rounded-xl p-6 md:p-8 flex flex-col gap-3 hover:shadow-md transition-shadow"
-              style={{
-                background: "var(--bg-card)",
-                border: "1px solid var(--border-subtle)",
-              }}
-            >
+            {/* Trust signal 3 — [DEMO COPY — pending client review] */}
+            <ScrollReveal delay={0.25} className="rounded-xl p-6 md:p-8 flex flex-col gap-3 hover:shadow-md transition-shadow" style={{ background: "var(--bg-card)", border: "1px solid var(--border-subtle)" }}>
               <span className="text-3xl">🤝</span>
               <h3
                 className="font-display font-semibold"
@@ -252,17 +236,14 @@ export default function AboutPage() {
               >
                 No hidden incentives
               </h3>
-              <p
-                className="font-body leading-relaxed"
-                style={{ color: "var(--text-secondary)" }}
-              >
+              <p className="font-body leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                 I charge a flat consulting fee for my time. I am not paid a
                 commission by Impact Health Sharing for every person I enroll.
                 That means I have no financial reason to push you toward a plan
                 that is not right for your situation. If health sharing is not
                 the right fit, I will tell you that directly.
               </p>
-            </div>
+            </ScrollReveal>
           </div>
 
           {/* CTA */}

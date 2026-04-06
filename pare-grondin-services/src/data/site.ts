@@ -27,7 +27,7 @@ export const hero = {
     "I help NH families, freelancers, and business owners cut their healthcare costs by 40-60% — with no networks, no contracts, and no waiting period.",
   priceAnchor: "Plans starting at $73/month",
   primaryCta: "Book a Free Consultation",
-  secondaryCta: "Join Tuesday's Free Info Session",
+  secondaryCta: "See If You Qualify →",
   trustLine: "Health sharing is not insurance. It's a community-based alternative — and it changed my family's life.", // [DEMO COPY]
 };
 
