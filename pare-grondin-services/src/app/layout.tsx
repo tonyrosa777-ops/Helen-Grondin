@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Fraunces, Plus_Jakarta_Sans, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/data/site";
+import Navigation from "@/components/layout/Navigation";
+import Footer from "@/components/layout/Footer";
 
 const fraunces = Fraunces({
   variable: "--font-display",
@@ -58,7 +60,11 @@ export default function RootLayout({
       className={`${fraunces.variable} ${plusJakartaSans.variable} ${spaceMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[var(--bg-base)] text-[var(--text-primary)]">
-        {children}
+        <Navigation />
+        <main className="flex-1">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
