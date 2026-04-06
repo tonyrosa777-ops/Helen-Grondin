@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import BookingWidget from "@/components/BookingWidget";
+import BookingCalendar from "@/components/BookingCalendar";
 
 export const metadata: Metadata = {
   title: "Book a Free Consultation — Pare Grondin Services",
@@ -88,7 +88,7 @@ export default function BookingPage() {
             your market.
           </p>
 
-          <BookingWidget />
+          <BookingCalendar />
 
           <p
             className="font-body text-sm text-center mt-6"
