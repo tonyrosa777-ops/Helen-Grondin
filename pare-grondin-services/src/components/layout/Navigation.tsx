@@ -12,7 +12,10 @@ const navLinks = [
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
   { label: "Testimonials", href: "/testimonials" },
+  { label: "Pricing", href: "/pricing", internal: true },
 ];
+
+interface NavLink { label: string; href: string; internal?: boolean; }
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -54,7 +57,7 @@ export default function Navigation() {
 
           {/* Desktop center links */}
           <ul className="hidden md:flex items-center gap-8 list-none m-0 p-0">
-            {navLinks.map((link) => {
+            {(navLinks as NavLink[]).map((link) => {
               const isActive =
                 pathname === link.href ||
                 (link.href !== "/" && pathname.startsWith(link.href));
@@ -63,12 +66,17 @@ export default function Navigation() {
                   <Link
                     href={link.href}
                     className={`font-body font-medium text-sm transition-colors ${
-                      isActive
+                      link.internal
+                        ? "text-[var(--accent)] hover:text-[var(--accent-dark)]"
+                        : isActive
                         ? "text-[var(--primary)]"
                         : "text-[var(--text-secondary)] hover:text-[var(--primary)]"
                     }`}
                   >
                     {link.label}
+                    {link.internal && (
+                      <span className="ml-1 font-mono text-[10px] opacity-60">⬥</span>
+                    )}
                   </Link>
                 </li>
               );
@@ -165,7 +173,7 @@ export default function Navigation() {
 
               {/* Drawer links */}
               <nav className="flex-1 flex flex-col px-6 py-8 gap-1" aria-label="Mobile navigation">
-                {navLinks.map((link) => {
+                {(navLinks as NavLink[]).map((link) => {
                   const isActive =
                     pathname === link.href ||
                     (link.href !== "/" && pathname.startsWith(link.href));
@@ -175,12 +183,14 @@ export default function Navigation() {
                       href={link.href}
                       onClick={() => setMobileOpen(false)}
                       className={`font-body font-medium text-base py-3 border-b border-[var(--border-subtle)] transition-colors ${
-                        isActive
+                        link.internal
+                          ? "text-[var(--accent)]"
+                          : isActive
                           ? "text-[var(--primary)]"
                           : "text-[var(--text-secondary)] hover:text-[var(--primary)]"
                       }`}
                     >
-                      {link.label}
+                      {link.label}{link.internal && " ⬥"}
                     </Link>
                   );
                 })}

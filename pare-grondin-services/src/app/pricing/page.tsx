@@ -41,10 +41,11 @@ const comparisonGroups = [
     ],
   },
   {
-    category: "Commerce",
+    category: "Growth",
     rows: [
-      { feature: "Printful print-on-demand shop", starter: false, pro: false, premium: true },
-      { feature: "Stripe checkout + cart", starter: false, pro: false, premium: true },
+      { feature: "10 programmatic service area pages (NH cities)", starter: false, pro: false, premium: true },
+      { feature: "3-sequence email automation suite (post-quiz, post-booking, re-engagement)", starter: false, pro: false, premium: true },
+      { feature: "Lead magnet PDF + email gate (passive list builder)", starter: false, pro: false, premium: true },
     ],
   },
   {

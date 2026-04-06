@@ -362,13 +362,13 @@ export const pricingTiers = [
     price: 5500,
     deposit: 2750,
     badge: null,
-    description: "Everything in Pro plus a full e-commerce shop",
+    description: "Full marketing machine — traffic, nurture, and lead capture working 24/7",
     features: [
       "Everything in Pro",
-      "Printful print-on-demand shop",
-      "Stripe checkout integration",
-      "Product variant picker",
-      "Cart drawer + checkout flow",
+      "10 programmatic service area pages (NH cities)",
+      "3-sequence email automation suite via Resend",
+      "Lead magnet PDF + email gate (list builder)",
+      "Priority launch support",
     ],
   },
 ];
