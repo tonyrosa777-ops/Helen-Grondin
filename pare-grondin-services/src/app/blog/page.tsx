@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { getAllArticles } from "@/lib/articles";
 
 export const metadata: Metadata = {
@@ -62,6 +63,15 @@ export default function BlogPage() {
                 border: "1px solid var(--border-subtle)",
               }}
             >
+              <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
+                <Image
+                  src={`/images/blog/blog-${featured.slug}.jpg`}
+                  alt={featured.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
               <div className="p-8 sm:p-10">
                 <div className="flex items-center gap-3 mb-4">
                   <span
@@ -134,12 +144,20 @@ export default function BlogPage() {
             {rest.map((article) => (
               <article
                 key={article.slug}
-                className="rounded-xl flex flex-col"
+                className="rounded-xl flex flex-col overflow-hidden"
                 style={{
                   background: "var(--bg-card)",
                   border: "1px solid var(--border-subtle)",
                 }}
               >
+                <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
+                  <Image
+                    src={`/images/blog/blog-${article.slug}.jpg`}
+                    alt={article.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <div className="p-6 flex flex-col flex-1">
                   {/* Category badge */}
                   <div className="mb-3">
