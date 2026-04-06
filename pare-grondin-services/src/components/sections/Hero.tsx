@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 import HeroParticles from "@/components/HeroParticles";
 import HealthShieldCanvas from "@/components/HealthShieldCanvas";
-import { hero, siteConfig } from "@/data/site";
+import { hero } from "@/data/site";
 
 /*
  * Hero — 3-layer animated hero. Split layout: text left, canvas right.
@@ -62,13 +62,17 @@ export default function Hero() {
 
             {/* H1 — Tagline: "Where Healthcare Finally Makes Sense" */}
             <motion.h1
-              className="hero-shimmer-sage font-display font-bold leading-tight"
-              style={{ fontSize: "clamp(2.6rem, 5vw, 4.4rem)" }}
+              className="font-display font-bold leading-tight"
+              style={{
+                fontSize: "clamp(2.6rem, 5vw, 4.4rem)",
+                color: "var(--text-on-dark)",
+              }}
               initial={{ opacity: 0, y: 22 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.12, duration: 0.62, ease: EASE }}
             >
-              {siteConfig.tagline}
+              Where Healthcare{" "}
+              <span className="hero-shimmer-sage">Finally Makes Sense</span>
             </motion.h1>
 
             {/* Amber rule — appears after headline */}
