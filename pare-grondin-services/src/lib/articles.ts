@@ -290,7 +290,7 @@ export const articles: Article[] = [
     readTime: "8 min read",
     category: "Trust",
     content: `
-<p>The health sharing space has real scandals, and New Hampshire families specifically have been hurt by them. Before I enrolled my own family in Impact Health Sharing, I spent weeks researching these failures and verifying that Impact is structurally different from the organizations that collapsed or were shut down. Here is what I found.</p>
+<p>Impact Health Sharing is safe, but your skepticism about the health sharing industry is justified. Several organizations in this space have failed, defrauded members, or been shut down by state regulators, including two that operated in New Hampshire. Impact is structurally and operationally different from every organization that has failed, and I verified that before I enrolled my own family.</p>
 
 <h2>The Scandals Are Real</h2>
 <p>I am not going to minimize what happened to real families. These are not fringe cases.</p>
@@ -315,7 +315,7 @@ export const articles: Article[] = [
 <li>What is the sharing percentage track record? Ask for documented evidence of what percentage of submitted eligible bills have been shared over the past five years.</li>
 <li>Has the NH Insurance Department taken any action against the organization? Search the NHID website for any bulletins or enforcement actions.</li>
 </ul>
-<p>I did all of this research on Impact before I enrolled my family. If you want to see the sources I found, book a consultation and I will walk you through my verification process. I think the best decision you can make is an informed one, even if it means you end up not enrolling.</p>
+<p>I did all of this research on Impact before I enrolled my family. If you want to see the sources I found and apply them to your own situation, book a free consultation. I will walk you through my verification process and give you a direct assessment of whether Impact is the right fit for your household.</p>
     `,
   },
 

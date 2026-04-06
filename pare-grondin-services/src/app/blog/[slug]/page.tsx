@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getArticle, getAllArticles } from "@/lib/articles";
+import { ArticleSchema } from "@/components/JsonLd";
+import { siteConfig } from "@/data/site";
 
 export function generateStaticParams() {
   return getAllArticles().map((a) => ({ slug: a.slug }));
@@ -42,6 +44,13 @@ export default async function ArticlePage({
 
   return (
     <main>
+      <ArticleSchema
+        title={article.title}
+        excerpt={article.excerpt}
+        date={article.date}
+        slug={article.slug}
+        siteUrl={siteConfig.url}
+      />
       {/* Back link */}
       <div style={{ background: "var(--bg-base)", borderBottom: "1px solid var(--border-subtle)" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">

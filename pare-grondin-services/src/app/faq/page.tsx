@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import FAQContent from "./FAQContent";
+import { FAQPageSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Health Sharing FAQ: Common Questions Answered",
@@ -8,5 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function FAQPage() {
-  return <FAQContent />;
+  return (
+    <>
+      <FAQPageSchema />
+      <FAQContent />
+    </>
+  );
 }

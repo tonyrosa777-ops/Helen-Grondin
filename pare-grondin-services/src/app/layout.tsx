@@ -4,6 +4,7 @@ import "./globals.css";
 import { siteConfig } from "@/data/site";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
+import { ProfessionalServiceSchema } from "@/components/JsonLd";
 
 const fraunces = Fraunces({
   variable: "--font-display",
@@ -61,6 +62,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-[var(--bg-base)] text-[var(--text-primary)]">
         <Navigation />
+        <ProfessionalServiceSchema />
         <main className="flex-1">
           {children}
         </main>
