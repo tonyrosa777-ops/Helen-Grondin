@@ -1,6 +1,8 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST() {
-  // TODO: implement contact form handler with Resend
-  return NextResponse.json({ message: "stub" });
+// TODO: wire to Resend on launch
+export async function POST(req: NextRequest) {
+  const body = await req.json();
+  console.log("[contact form submission]", body);
+  return NextResponse.json({ ok: true });
 }

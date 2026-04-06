@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
+import ContactContent from "./ContactContent";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact Helen Grondin",
+  description:
+    "Get in touch with Helen Grondin, NH's health sharing consultant. Book a free consultation or send a question.",
 };
 
 export default function ContactPage() {
-  return <main>/* contact page — built in Stage 1E */</main>;
+  return <ContactContent />;
 }

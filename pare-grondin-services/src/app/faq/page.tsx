@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
+import FAQContent from "./FAQContent";
 
 export const metadata: Metadata = {
-  title: "Faq",
+  title: "Health Sharing FAQ: Common Questions Answered",
+  description:
+    "Honest answers to the most common questions about Impact Health Sharing, including the hard ones about what is not covered and why it is different from Aliera.",
 };
 
-export default function FaqPage() {
-  return <main>/* faq page — built in Stage 1E */</main>;
+export default function FAQPage() {
+  return <FAQContent />;
 }
