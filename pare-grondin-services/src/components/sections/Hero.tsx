@@ -62,11 +62,8 @@ export default function Hero() {
 
             {/* H1 — Tagline: "Where Healthcare Finally Makes Sense" */}
             <motion.h1
-              className="font-display font-bold leading-tight"
-              style={{
-                fontSize: "clamp(2.6rem, 5vw, 4.4rem)",
-                color: "var(--text-on-dark)",
-              }}
+              className="hero-shimmer-sage font-display font-bold leading-tight"
+              style={{ fontSize: "clamp(2.6rem, 5vw, 4.4rem)" }}
               initial={{ opacity: 0, y: 22 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.12, duration: 0.62, ease: EASE }}
