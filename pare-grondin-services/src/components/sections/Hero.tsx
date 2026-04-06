@@ -150,7 +150,7 @@ export default function Hero() {
           {/* ── RIGHT: HealthShieldCanvas ── */}
           <motion.div
             className="w-full lg:w-1/2 relative"
-            style={{ height: "clamp(340px, 50vw, 540px)" }}
+            style={{ height: "clamp(420px, 58vw, 680px)" }}
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.1, duration: 1.0, ease: EASE }}

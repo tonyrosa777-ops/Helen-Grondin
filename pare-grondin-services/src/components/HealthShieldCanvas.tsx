@@ -78,8 +78,8 @@ export default function HealthShieldCanvas() {
 
     let crossX = 0, crossY = 0;
     let armLen = 90;
-    let armW   = 24;
-    let arcR   = 120;
+    let armW   = 26;
+    let arcR   = 130;
 
     let phase: AnimPhase = "stream";
     let forgeAt  = -1;
@@ -92,35 +92,36 @@ export default function HealthShieldCanvas() {
     // ── Spawn particles from canvas edges ────────────────────────────────────
     function spawnStreams(W: number, H: number) {
       particles = [];
-      const n = 16;
+      const n = 26;
       for (let i = 0; i < n; i++) {
-        const angle = (i / n) * Math.PI * 2 + Math.random() * 0.4;
-        const dist  = Math.max(W, H) * 0.60;
+        const angle = (i / n) * Math.PI * 2 + Math.random() * 0.3;
+        const dist  = Math.max(W, H) * 0.72;
         const sx    = crossX + Math.cos(angle) * dist;
         const sy    = crossY + Math.sin(angle) * dist;
-        const cpx   = sx + (crossX - sx) * 0.32 + (Math.random() - 0.5) * 65;
-        const cpy   = sy + (crossY - sy) * 0.32 + (Math.random() - 0.5) * 65;
+        const cpx   = sx + (crossX - sx) * 0.30 + (Math.random() - 0.5) * 90;
+        const cpy   = sy + (crossY - sy) * 0.30 + (Math.random() - 0.5) * 90;
         particles.push({
           sx, sy, cpx, cpy,
           t: 0,
-          speed: 0.0055 + Math.random() * 0.004,
-          size: 1.3 + Math.random() * 1.3,
+          speed: 0.005 + Math.random() * 0.0035,
+          size: 1.6 + Math.random() * 1.8,
         });
       }
     }
 
     // ── Forge flash: rings + sparks ───────────────────────────────────────────
     function fireForge(now: number) {
-      rings.push({ x: crossX, y: crossY, r0: 4, r1: arcR * 0.58, born: now, dur: 440 });
-      rings.push({ x: crossX, y: crossY, r0: 2, r1: arcR * 0.30, born: now, dur: 260 });
-      const n = 11;
+      rings.push({ x: crossX, y: crossY, r0: 6,  r1: arcR * 1.10, born: now, dur: 600 });
+      rings.push({ x: crossX, y: crossY, r0: 4,  r1: arcR * 0.72, born: now, dur: 400 });
+      rings.push({ x: crossX, y: crossY, r0: 2,  r1: arcR * 0.38, born: now, dur: 240 });
+      const n = 18;
       for (let i = 0; i < n; i++) {
-        const angle = (i / n) * Math.PI * 2 + Math.random() * 0.45;
+        const angle = (i / n) * Math.PI * 2 + Math.random() * 0.35;
         sparks.push({
           x: crossX, y: crossY, angle,
-          maxLen: 30 + Math.random() * 44,
-          born: now, dur: 280 + Math.random() * 130,
-          white: Math.random() > 0.42,
+          maxLen: 55 + Math.random() * 90,
+          born: now, dur: 340 + Math.random() * 180,
+          white: Math.random() > 0.38,
         });
       }
     }
@@ -130,7 +131,7 @@ export default function HealthShieldCanvas() {
       const ct = Math.max(0, Math.min(1, coolT));
       const [r, g, b] = heatRGB(ct);
       const glow = Math.max(0, 1 - ct);
-      const bl   = glow * 34 + (phase === "idle" ? 5 + breathe * 9 : 3);
+      const bl   = glow * 60 + (phase === "idle" ? 10 + breathe * 22 : 4);
 
       ctx.save();
       ctx.shadowColor = `rgb(${r},${g},${b})`;
@@ -159,8 +160,8 @@ export default function HealthShieldCanvas() {
 
       // Edge shimmer stroke
       ctx.shadowBlur  = 0;
-      ctx.strokeStyle = `rgba(${mn(255,r+65)},${mn(255,g+65)},${mn(255,b+22)},${.20 + glow * .52})`;
-      ctx.lineWidth   = 0.85;
+      ctx.strokeStyle = `rgba(${mn(255,r+65)},${mn(255,g+65)},${mn(255,b+22)},${.28 + glow * .60})`;
+      ctx.lineWidth   = 1.2;
       ctx.beginPath();
       ctx.roundRect(crossX - aw / 2, crossY - al, aw, al * 2, vr);
       ctx.stroke();
@@ -176,16 +177,16 @@ export default function HealthShieldCanvas() {
       if (progress <= 0) return;
       const ct = Math.max(0, Math.min(1, coolT));
       const [r, g, b] = heatRGB(ct * 0.85 + 0.12);
-      const alpha = phase === "idle" ? 0.22 + breathe * 0.14 : 0.30;
+      const alpha = phase === "idle" ? 0.30 + breathe * 0.22 : 0.42;
 
       ctx.save();
       ctx.beginPath();
       ctx.arc(crossX, crossY, arcR, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * progress);
       ctx.strokeStyle = `rgba(${r},${g},${b},${alpha.toFixed(2)})`;
-      ctx.lineWidth   = armW * 0.18;
+      ctx.lineWidth   = armW * 0.28;
       ctx.lineCap     = "round";
       ctx.shadowColor = `rgb(${r},${g},${b})`;
-      ctx.shadowBlur  = phase === "idle" ? 10 + breathe * 6 : 14;
+      ctx.shadowBlur  = phase === "idle" ? 18 + breathe * 16 : 22;
       ctx.stroke();
       ctx.restore();
     }
@@ -203,9 +204,9 @@ export default function HealthShieldCanvas() {
       crossY = H * 0.46;
 
       const minDim = Math.min(W, H);
-      armLen = minDim * 0.20;
-      armW   = minDim * 0.050;
-      arcR   = armLen * 1.55;
+      armLen = minDim * 0.30;
+      armW   = minDim * 0.072;
+      arcR   = armLen * 1.65;
 
       // Reset
       phase = "stream"; forgeAt = -1; arcStart = -1;
@@ -260,8 +261,8 @@ export default function HealthShieldCanvas() {
       }
 
       if (phase === "idle") {
-        breathe    = (Math.sin(elapsed * 0.00088) * 0.5) + 0.5;
-        coolingT   = 0.90 + Math.sin(elapsed * 0.00088) * 0.07;
+        breathe    = (Math.sin(elapsed * 0.00095) * 0.5) + 0.5;
+        coolingT   = 0.88 + Math.sin(elapsed * 0.00095) * 0.10;
         arcProgress = 1;
         crossScale = 1;
       }
