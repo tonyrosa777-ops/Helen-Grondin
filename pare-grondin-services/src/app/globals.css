@@ -174,14 +174,14 @@ html {
   animation: shimmer-sweep 3.6s linear infinite;
 }
 
-/* Sage-green + white shimmer — hero H1 tagline */
+/* Sage-green → amber → sage shimmer — hero H1 tagline */
 .hero-shimmer-sage {
   background: linear-gradient(
     90deg,
     var(--primary)       0%,
-    #8bbfa0              22%,
-    rgba(245,245,240,1)  50%,
-    #8bbfa0              78%,
+    #8bbfa0              20%,
+    var(--accent)        50%,
+    #8bbfa0              80%,
     var(--primary)       100%
   );
   background-size: 200% auto;
