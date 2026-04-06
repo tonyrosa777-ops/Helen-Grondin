@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────
+   Pare Grondin Services — Design Tokens
+   Source of truth: design-system.md
+   DO NOT hard-code colors in components.
+   ───────────────────────────────────────── */
+
+:root {
+  /* Brand Colors */
+  --primary: rgb(77, 122, 94);              /* Sage green — headings, primary buttons, nav active */
+  --primary-hex: 4d7a5e;
+  --primary-muted: rgba(77, 122, 94, 0.18); /* Hover states, tag fills, backgrounds */
+
+  --accent: rgb(201, 123, 46);              /* Warm amber — CTA buttons, stats, particle color */
+  --accent-hex: c97b2e;
+  --accent-dark: rgb(170, 100, 32);         /* Hover state for accent */
+
+  /* Background Scale — Light Theme */
+  --bg-base: #FAF8F4;                       /* Warm cream — global page background */
+  --bg-elevated: #F2EDE5;                   /* Alternating sections */
+  --bg-card: #FFFFFF;                       /* Cards, modals, form inputs */
+  --bg-hero: #1A2B1E;                       /* Hero dark panel — deep sage */
+
+  /* Text Scale */
+  --text-primary: #1A2B1E;
+  --text-secondary: rgba(26, 43, 30, 0.70);
+  --text-muted: rgba(26, 43, 30, 0.45);
+  --text-on-dark: #F5F5F0;                  /* Text on dark hero background */
+  --text-on-dark-muted: rgba(245, 245, 240, 0.70);
+
+  /* Borders */
+  --border-subtle: rgba(26, 43, 30, 0.10);
+  --border-medium: rgba(26, 43, 30, 0.20);
+}
+
+@theme inline {
+  --color-background: var(--bg-base);
+  --color-foreground: var(--text-primary);
+}
+
+/* ─────────────────────────────────────────
+   Typography
+   ───────────────────────────────────────── */
+
+/* Google Fonts loaded in layout.tsx */
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display, 'Fraunces', serif);
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+
+.font-display { font-family: var(--font-display, 'Fraunces', serif); }
+.font-body    { font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif); }
+.font-mono    { font-family: var(--font-mono, 'Space Mono', monospace); }
+
+.eyebrow {
+  font-family: var(--font-mono, 'Space Mono', monospace);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ─────────────────────────────────────────
+   Layout Utilities
+   ───────────────────────────────────────── */
+
+.section-base {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-base {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+.section-elevated {
+  background: var(--bg-elevated);
+}
+
+/* ─────────────────────────────────────────
+   Component Tokens
+   ───────────────────────────────────────── */
+
+/* Disable default focus ring — use custom ring styles */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prose max-width */
+.prose-content {
+  max-width: 65ch;
+}

@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"c:/Projects/Helen Grondin/.claude/commands\")",
+      "Bash(cp \"c:/Projects/Helen Grondin/project-prime.md\" \"c:/Projects/Helen Grondin/.claude/commands/prime.md\")",
+      "Bash(sed -i 's/\\\\[BUSINESS_NAME\\\\]/Pare Grondin Services/g' prime.md)",
+      "Bash(sed -i 's/\\\\[DOMAIN\\\\]/TBD — domain to be purchased after sale closes/g' prime.md)",
+      "Bash(sed -i 's/\\\\[BUSINESS_TYPE\\\\]/health sharing advocate and Impact Health Sharing enrollment consultant/g' prime.md)",
+      "Bash(sed -i 's/\\\\[LOCATION\\\\]/Manchester, New Hampshire/g' prime.md)",
+      "Bash(sed -i 's/\\\\[LAUNCH_TARGET\\\\]/ASAP — launch immediately after sale closes/g' prime.md)",
+      "Bash(sed -i 's/\\\\[BUSINESS_NAME\\\\]/Pare Grondin Services/g' CLAUDE.md)",
+      "Bash(sed -i 's/\\\\[DOMAIN\\\\]/TBD — domain purchased after sale closes/g' CLAUDE.md)",
+      "Bash(sed -i 's/\\\\[BUSINESS_TYPE\\\\]/health sharing advocate and Impact Health Sharing enrollment consultant/g' CLAUDE.md)",
+      "Bash(sed -i 's/\\\\[LOCATION\\\\]/Manchester, New Hampshire/g' CLAUDE.md)",
+      "Bash(sed -i 's/\\\\[LAUNCH_TARGET\\\\]/ASAP — immediately after sale closes/g' CLAUDE.md)",
+      "Read(//c/Projects/Optimus Assets/.claude/agents/onboarding/**)",
+      "Bash(npx create-next-app@latest pare-grondin-services --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-git)",
+      "Bash(mkdir -p app/about app/services app/services/\\\\[slug\\\\] app/pricing app/quiz app/blog app/blog/\\\\[slug\\\\] app/shop app/testimonials app/contact app/faq app/booking app/studio/\\\\[\\\\[...tool\\\\]\\\\] app/api/contact app/api/quiz app/api/printful/products app/api/printful/variants/\\\\[id\\\\] app/api/stripe/checkout app/api/stripe/webhook)",
+      "Bash(mkdir -p components/animations components/layout components/sections components/blog components/shop components/ui)",
+      "Bash(mkdir -p data lib sanity/lib sanity/schemaTypes)",
+      "Bash(npx tsc:*)"
+    ]
+  }
+}
