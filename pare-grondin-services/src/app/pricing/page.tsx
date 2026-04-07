@@ -15,44 +15,42 @@ const comparisonGroups = [
   {
     category: "Foundation",
     rows: [
-      { feature: "Animated hero section (3-layer)", starter: true, pro: true, premium: true },
+      { feature: "Animated hero section (3-layer particle + SVG)", starter: true, pro: true, premium: true },
       { feature: "Homepage with all sections", starter: true, pro: true, premium: true },
       { feature: "About, Services, Contact, FAQ pages", starter: true, pro: true, premium: true },
-      { feature: "32 testimonials page", starter: true, pro: true, premium: true },
+      { feature: "32 client testimonials page", starter: true, pro: true, premium: true },
       { feature: "Mobile-first responsive design", starter: true, pro: true, premium: true },
-      { feature: "Vercel deployment", starter: true, pro: true, premium: true },
+      { feature: "SEO foundation (schema, meta, sitemap)", starter: true, pro: true, premium: true },
+      { feature: "Vercel deployment + 30-day revision window", starter: true, pro: true, premium: true },
     ],
   },
   {
-    category: "Conversion",
+    category: "Conversion Tools",
     rows: [
-      { feature: "Multi-step quiz with lead capture", starter: false, pro: true, premium: true },
-      { feature: "Custom Calendly booking calendar", starter: false, pro: true, premium: true },
-      { feature: "NH comparison table", starter: false, pro: true, premium: true },
-      { feature: "Basic savings calculator (on-page, interactive)", starter: false, pro: true, premium: true },
-      { feature: "Enhanced savings calculator + personalized PDF report", starter: false, pro: false, premium: true },
+      { feature: "Interactive savings calculator (show prospects their exact savings)", starter: false, pro: true, premium: true },
+      { feature: "Multi-step quiz with lead capture (qualifies leads before they call)", starter: false, pro: true, premium: true },
+      { feature: "Custom branded booking calendar (no Calendly branding)", starter: false, pro: true, premium: true },
+      { feature: "NH health sharing vs. insurance comparison table", starter: false, pro: true, premium: true },
     ],
   },
   {
     category: "Content & SEO",
     rows: [
-      { feature: "SEO foundation (schema, meta, sitemap)", starter: true, pro: true, premium: true },
-      { feature: "Blog with 9-10 NH-focused AEO articles", starter: false, pro: true, premium: true },
+      { feature: "Blog: 9–10 NH-focused AEO articles (organic traffic while you sleep)", starter: false, pro: true, premium: true },
     ],
   },
   {
-    category: "Growth",
+    category: "Local Market Dominance",
     rows: [
-      { feature: "10 programmatic service area pages (NH cities, local SEO)", starter: false, pro: false, premium: true },
-      { feature: "Lead magnet PDF + email gate (passive list builder)", starter: false, pro: false, premium: true },
+      { feature: "10 programmatic NH city pages (own local search for years)", starter: false, pro: false, premium: true },
+      { feature: "Lead magnet + email gate (captures leads not ready to book yet)", starter: false, pro: false, premium: true },
+      { feature: "Priority launch support", starter: false, pro: false, premium: true },
     ],
   },
   {
     category: "Support",
     rows: [
-      { feature: "30-day revision window", starter: true, pro: true, premium: true },
-      { feature: "Resend email integration", starter: false, pro: true, premium: true },
-      { feature: "Priority launch support", starter: false, pro: false, premium: true },
+      { feature: "Resend email integration (quiz + booking notifications)", starter: false, pro: true, premium: true },
     ],
   },
 ];
