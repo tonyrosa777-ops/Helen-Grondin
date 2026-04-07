@@ -81,8 +81,7 @@ export default function SavingsCalculator() {
             step={25}
             value={premium}
             onChange={(e) => setPremium(Number(e.target.value))}
-            className="w-full h-2 rounded-full appearance-none cursor-pointer"
-            style={{ accentColor: "var(--accent)" }}
+            className="w-full"
           />
           <div className="flex justify-between font-mono text-xs mt-1" style={{ color: "var(--text-muted)" }}>
             <span>$200</span><span>$2,500</span>
