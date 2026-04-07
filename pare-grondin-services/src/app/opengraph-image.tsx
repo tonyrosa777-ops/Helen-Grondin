@@ -65,7 +65,7 @@ export default function OGImage() {
             marginBottom: 48,
           }}
         >
-          Helen Grondin helps NH families cut healthcare costs 40-60% through
+          Pare Grondin Services helps NH families cut healthcare costs 40-60% through
           Impact Health Sharing.
         </div>
 

@@ -4,7 +4,7 @@ import TestimonialsContent from "./TestimonialsContent";
 export const metadata: Metadata = {
   title: "Member Testimonials — Real NH Families on Health Sharing",
   description:
-    "32 testimonials from New Hampshire families, freelancers, and COBRA refugees who switched to Impact Health Sharing through Helen Grondin.",
+    "32 testimonials from New Hampshire families, freelancers, and COBRA refugees who switched to Impact Health Sharing through Pare Grondin Services.",
 };
 
 export default function TestimonialsPage() {

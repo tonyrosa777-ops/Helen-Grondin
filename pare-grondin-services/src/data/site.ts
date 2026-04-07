@@ -5,10 +5,10 @@
 
 export const siteConfig = {
   name: "Pare Grondin Services",
-  wordmark: "Helen Grondin", // Visual brand mark used in nav and footer
+  wordmark: "Pare Grondin Services", // Visual brand mark used in nav and footer
   tagline: "Where Healthcare Finally Makes Sense",
   description:
-    "Helen Grondin helps New Hampshire families, self-employed workers, and COBRA refugees cut their healthcare costs by 40-60% through Impact Health Sharing — a nonprofit alternative to insurance.",
+    "Pare Grondin Services helps New Hampshire families, self-employed workers, and COBRA refugees cut their healthcare costs by 40-60% through Impact Health Sharing — a nonprofit alternative to insurance.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://paregrondinservices.com",
   location: "Manchester, NH",
   phone: "", // TODO: Helen to provide

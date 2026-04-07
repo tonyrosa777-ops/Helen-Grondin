@@ -17,7 +17,7 @@ export async function generateMetadata(
   if (!area) return {};
   return {
     title: `Health Sharing in ${area.name}, NH — Pare Grondin Services`,
-    description: `Helen Grondin helps ${area.name} families and self-employed workers cut health insurance costs by 40–60% through Impact Health Sharing. ${area.tagline}`,
+    description: `Pare Grondin Services helps ${area.name} families and self-employed workers cut health insurance costs by 40–60% through Impact Health Sharing. ${area.tagline}`,
   };
 }
 

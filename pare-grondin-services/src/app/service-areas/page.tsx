@@ -7,7 +7,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 export const metadata: Metadata = {
   title: "Health Sharing in New Hampshire — Service Areas",
   description:
-    "Helen Grondin helps families and self-employed workers across New Hampshire cut health insurance costs through Impact Health Sharing. Find your city.",
+    "Pare Grondin Services helps families and self-employed workers across New Hampshire cut health insurance costs through Impact Health Sharing. Find your city.",
 };
 
 export default function ServiceAreasPage() {
