@@ -5,24 +5,39 @@ import Link from "next/link";
 
 /*
  * AboutTeaser — "Meet Your Advocate" section
- * bg-base (section 3, alternating)
- * 2-col layout: text left, portrait placeholder right
- * Source: design-system.md Section 5 (button styles, secondary CTA)
- *         Section 6 (photo placeholder guidance)
- *         Section 7 (Principle 1 — speak to the pain, Helen's personal voice)
+ * bg-base (warm cream) — relief after the dark pain-points block.
+ * Left: text + story. Right: designed portrait placeholder card.
+ * Source: design-system.md Section 5, 6, 7
  */
 
 const EASE = [0, 0, 0.2, 1] as const;
 
 export default function AboutTeaser() {
-  const { ref, inView } = useInView({ threshold: 0.15, triggerOnce: true });
+  const { ref, inView } = useInView({ threshold: 0.12, triggerOnce: true });
 
   return (
     <section
-      className="section-base"
+      className="section-base relative overflow-hidden"
       style={{ background: "var(--bg-base)" }}
     >
-      <div ref={ref} className="max-w-6xl mx-auto px-6">
+      {/* Decorative large quotation mark — behind text */}
+      <div
+        className="absolute pointer-events-none select-none"
+        aria-hidden="true"
+        style={{
+          top: "-1rem",
+          left: "2rem",
+          fontFamily: "var(--font-display, 'Fraunces', serif)",
+          fontSize: "clamp(12rem, 22vw, 22rem)",
+          lineHeight: 1,
+          color: "rgba(77,122,94,0.055)",
+          userSelect: "none",
+        }}
+      >
+        &ldquo;
+      </div>
+
+      <div ref={ref} className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-start gap-12 md:gap-16">
 
           {/* ── Left: Text panel ── */}
@@ -51,9 +66,8 @@ export default function AboutTeaser() {
               I was paying $1,200 a month for insurance I was afraid to use.
             </motion.h2>
 
-            {/* Paragraph 1 — [DEMO COPY] */}
             <motion.p
-              className="font-body text-base leading-relaxed prose-content"
+              className="font-body text-base leading-relaxed"
               style={{ color: "var(--text-secondary)" }}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -68,9 +82,8 @@ export default function AboutTeaser() {
               be true.
             </motion.p>
 
-            {/* Paragraph 2 — [DEMO COPY] */}
             <motion.p
-              className="font-body text-base leading-relaxed prose-content"
+              className="font-body text-base leading-relaxed"
               style={{ color: "var(--text-secondary)" }}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -85,7 +98,6 @@ export default function AboutTeaser() {
               there is a real alternative. That is what I do now.
             </motion.p>
 
-            {/* CTA — ghost/secondary style */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -93,14 +105,8 @@ export default function AboutTeaser() {
             >
               <Link
                 href="/about"
-                className="inline-flex items-center font-body font-semibold text-base transition-all hover:underline"
-                style={{ color: "var(--text-secondary)" }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = "var(--primary)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = "var(--text-secondary)";
-                }}
+                className="inline-flex items-center font-body font-semibold text-base transition-colors hover:underline"
+                style={{ color: "var(--primary)" }}
               >
                 Helen&apos;s Full Story &rarr;
               </Link>
@@ -108,39 +114,88 @@ export default function AboutTeaser() {
 
           </div>
 
-          {/* ── Right: Portrait placeholder ── */}
+          {/* ── Right: Designed portrait card ── */}
           <motion.div
             className="w-full md:w-1/2 flex items-center justify-center"
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={inView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ delay: 0.2, duration: 0.8, ease: EASE }}
+            initial={{ opacity: 0, x: 24 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ delay: 0.22, duration: 0.8, ease: EASE }}
           >
             <div
-              className="w-full max-w-xs aspect-[3/4] rounded-2xl flex flex-col items-center justify-center gap-3"
+              className="w-full max-w-sm rounded-3xl overflow-hidden"
               style={{
-                background:
-                  "linear-gradient(135deg, rgba(201,123,46,0.12) 0%, rgba(77,122,94,0.18) 100%)",
                 border: "1px solid var(--border-subtle)",
+                boxShadow: "0 12px 48px rgba(26,43,30,0.09), 0 2px 8px rgba(26,43,30,0.04)",
               }}
             >
-              <span
-                className="font-display font-bold text-2xl text-center px-4"
-                style={{ color: "var(--text-primary)" }}
+              {/* Portrait area — gradient placeholder */}
+              <div
+                className="w-full flex flex-col items-center justify-center gap-4 py-14 px-8"
+                style={{
+                  background:
+                    "linear-gradient(155deg, #1A2B1E 0%, rgba(77,122,94,0.85) 55%, rgba(201,123,46,0.30) 100%)",
+                  minHeight: "280px",
+                }}
               >
-                Helen Grondin
-              </span>
-              <span
-                className="font-mono text-xs uppercase tracking-widest text-center px-4"
-                style={{ color: "var(--text-muted)" }}
+                {/* NH leaf emblem */}
+                <div
+                  className="flex items-center justify-center rounded-full"
+                  style={{
+                    width: 80,
+                    height: 80,
+                    background: "rgba(245,245,240,0.12)",
+                    border: "1.5px solid rgba(245,245,240,0.22)",
+                    fontSize: "2.5rem",
+                  }}
+                >
+                  🌿
+                </div>
+                <p
+                  className="font-display font-bold text-xl text-center"
+                  style={{ color: "var(--text-on-dark)" }}
+                >
+                  Helen Grondin
+                </p>
+                <p
+                  className="font-mono text-xs uppercase tracking-widest text-center"
+                  style={{ color: "var(--text-on-dark-muted)" }}
+                >
+                  Photo Coming Soon
+                </p>
+              </div>
+
+              {/* Footer card strip */}
+              <div
+                className="px-7 py-5 flex items-center justify-between"
+                style={{ background: "var(--bg-card)" }}
               >
-                Photo Coming Soon
-              </span>
-              <span
-                className="font-body text-sm text-center px-8 mt-1"
-                style={{ color: "var(--text-muted)" }}
-              >
-                NH Health Sharing Advocate
-              </span>
+                <div>
+                  <p
+                    className="font-body font-semibold text-sm"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    NH Health Sharing Advocate
+                  </p>
+                  <p
+                    className="font-mono text-xs mt-0.5"
+                    style={{ color: "var(--text-muted)" }}
+                  >
+                    Impact Health Sharing · Manchester, NH
+                  </p>
+                </div>
+                <div
+                  className="flex items-center justify-center rounded-full flex-shrink-0"
+                  style={{
+                    width: 36,
+                    height: 36,
+                    background: "var(--primary-muted)",
+                    color: "var(--primary)",
+                    fontSize: "1rem",
+                  }}
+                >
+                  ✓
+                </div>
+              </div>
             </div>
           </motion.div>
 

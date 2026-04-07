@@ -6,8 +6,8 @@ import { services } from "@/data/site";
 
 /*
  * ServicesPreview — "What I Help You With" section
- * bg-elevated (section 4, alternating)
- * 3-col grid of service cards — per-card ScrollReveal stagger
+ * bg-elevated — visually separated from AboutTeaser (bg-base) by amber top divider.
+ * Cards get a 3px sage left border for depth + texture.
  * Source: design-system.md Section 5 (card styles, ghost link style)
  *         site.ts services[] for all content
  */
@@ -15,9 +15,24 @@ import { services } from "@/data/site";
 export default function ServicesPreview() {
   return (
     <section
-      className="section-base"
+      className="section-base relative"
       style={{ background: "var(--bg-elevated)" }}
     >
+      {/* Amber top divider — clear visual break from AboutTeaser */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: "2px",
+          background:
+            "linear-gradient(90deg, transparent 0%, var(--accent) 30%, var(--accent) 70%, transparent 100%)",
+          opacity: 0.55,
+        }}
+      />
+
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Section header */}
@@ -43,6 +58,7 @@ export default function ServicesPreview() {
                 style={{
                   background: "var(--bg-card)",
                   border: "1px solid var(--border-subtle)",
+                  borderLeft: "3px solid var(--primary)",
                 }}
               >
                 <span className="text-3xl block mb-4" role="img" aria-hidden="true">
