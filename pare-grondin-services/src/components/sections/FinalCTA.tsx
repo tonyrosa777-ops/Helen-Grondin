@@ -18,10 +18,19 @@ export default function FinalCTA() {
 
   return (
     <section
-      className="section-base"
+      className="section-base relative overflow-hidden"
       style={{ background: "var(--bg-hero)" }}
     >
-      <div ref={ref} className="max-w-4xl mx-auto px-6 text-center flex flex-col items-center gap-8">
+      {/* Amber radial glow — centered, closing warmth */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 55% 65% at 50% 50%, rgba(201, 123, 46, 0.09) 0%, transparent 70%)",
+        }}
+        aria-hidden="true"
+      />
+      <div ref={ref} className="relative z-10 max-w-4xl mx-auto px-6 text-center flex flex-col items-center gap-8">
 
         {/* H2 */}
         <motion.h2

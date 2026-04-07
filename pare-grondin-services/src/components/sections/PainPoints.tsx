@@ -1,6 +1,6 @@
 "use client";
-import { motion } from "framer-motion";
-import { StaggerContainer, staggerItem } from "@/components/animations/StaggerContainer";
+import { FadeUp } from "@/components/animations/FadeUp";
+import ScrollReveal from "@/components/ScrollReveal";
 import { painPoints } from "@/data/site";
 
 /*
@@ -15,60 +15,70 @@ export default function PainPoints() {
       className="section-base"
       style={{ background: "var(--bg-elevated)" }}
     >
+      {/* Amber gradient divider from hero */}
+      <div
+        className="h-px w-full mb-0"
+        style={{
+          background:
+            "linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%)",
+          opacity: 0.35,
+          marginBottom: 0,
+          position: "relative",
+          top: 0,
+        }}
+        aria-hidden="true"
+      />
+
       <div className="max-w-6xl mx-auto px-6">
 
-        {/* Section header */}
+        {/* Section header — animated */}
         <div className="text-center mb-12">
-          <p className="eyebrow mb-4">Does This Sound Familiar?</p>
-          <h2
-            className="font-display font-semibold"
-            style={{
-              color: "var(--text-primary)",
-              fontSize: "clamp(1.9rem, 3vw, 2.8rem)",
-            }}
-          >
-            Your health coverage shouldn&apos;t feel like a punishment
-          </h2>
-        </div>
-
-        {/* 4-card grid */}
-        <StaggerContainer
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
-          staggerDelay={0.12}
-        >
-          {painPoints.map((point, i) => (
-            <motion.div
-              key={i}
-              variants={staggerItem}
-              className="rounded-xl p-6 shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5"
+          <FadeUp>
+            <p className="eyebrow mb-4">Does This Sound Familiar?</p>
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            <h2
+              className="font-display font-semibold"
               style={{
-                background: "var(--bg-card)",
-                border: "1px solid var(--border-subtle)",
+                color: "var(--text-primary)",
+                fontSize: "clamp(2rem, 3.5vw, 3.2rem)",
               }}
             >
-              {/* Emoji */}
-              <span className="text-4xl block mb-4" role="img" aria-hidden="true">
-                {point.emoji}
-              </span>
+              Your health coverage shouldn&apos;t feel like a punishment
+            </h2>
+          </FadeUp>
+        </div>
 
-              {/* Headline */}
-              <h3
-                className="font-display font-semibold text-lg mb-2"
-                style={{ color: "var(--text-primary)" }}
+        {/* 4-card grid — per-card scroll reveal */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {painPoints.map((point, i) => (
+            <ScrollReveal key={i} delay={i * 0.1}>
+              <div
+                className="card-hover rounded-xl p-6 shadow-sm h-full"
+                style={{
+                  background: "var(--bg-card)",
+                  border: "1px solid var(--border-subtle)",
+                }}
               >
-                {point.headline}
-              </h3>
-
-              {/* Body */}
-              <p
-                className="font-body text-base leading-relaxed"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                {point.body}
-              </p>
-            </motion.div>
+                <span className="text-4xl block mb-4" role="img" aria-hidden="true">
+                  {point.emoji}
+                </span>
+                <h3
+                  className="font-display font-semibold text-lg mb-2"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  {point.headline}
+                </h3>
+                <p
+                  className="font-body text-base leading-relaxed"
+                  style={{ color: "var(--text-secondary)" }}
+                >
+                  {point.body}
+                </p>
+              </div>
+            </ScrollReveal>
           ))}
-        </StaggerContainer>
+        </div>
 
       </div>
     </section>

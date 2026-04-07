@@ -114,6 +114,16 @@ html {
   max-width: 65ch;
 }
 
+/* Card hover — luxury lift with sage border glow */
+.card-hover {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(77, 122, 94, 0.14), 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-color: rgba(77, 122, 94, 0.35) !important;
+}
+
 /* Button hover variants — CSS-only, safe for Server Components */
 .btn-accent {
   background: var(--accent);
