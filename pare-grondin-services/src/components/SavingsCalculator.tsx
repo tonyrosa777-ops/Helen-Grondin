@@ -172,21 +172,20 @@ export default function SavingsCalculator() {
 
         {/* Savings grid */}
         <div
-          className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x"
-          style={{
-            background: "var(--bg-card)",
-            divideColor: "var(--border-subtle)",
-          }}
+          className="grid grid-cols-1 sm:grid-cols-3"
+          style={{ background: "var(--bg-card)" }}
         >
           {[
             { label: "Monthly savings",   value: fmt(monthlySaved),   sub: "every single month"   },
             { label: "Annual savings",    value: fmt(annualSaved),    sub: "back in your pocket"  },
             { label: "5-year projection", value: fmt(fiveYearSaved),  sub: "compounded over time" },
-          ].map(({ label, value, sub }) => (
+          ].map(({ label, value, sub }, i) => (
             <div
               key={label}
               className="p-6 text-center"
-              style={{ borderColor: "var(--border-subtle)" }}
+              style={{
+                borderTop: i > 0 ? "1px solid var(--border-subtle)" : undefined,
+              }}
             >
               <p className="font-mono text-[10px] uppercase tracking-widest mb-2" style={{ color: "var(--text-muted)" }}>
                 {label}
