@@ -29,7 +29,7 @@ const comparisonGroups = [
     rows: [
       { feature: "Interactive savings calculator (show prospects their exact savings)", starter: false, pro: true, premium: true },
       { feature: "Multi-step quiz with lead capture (qualifies leads before they call)", starter: false, pro: true, premium: true },
-      { feature: "Custom branded booking calendar (no Calendly branding)", starter: false, pro: true, premium: true },
+      { feature: "Custom branded booking calendar (clients book directly from your site)", starter: false, pro: true, premium: true },
       { feature: "NH health sharing vs. insurance comparison table", starter: false, pro: true, premium: true },
     ],
   },

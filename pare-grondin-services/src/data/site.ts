@@ -351,7 +351,7 @@ export const pricingTiers = [
       "Everything in Starter",
       "Interactive savings calculator — show prospects their exact savings (your #1 closing tool)",
       "Multi-step quiz with lead capture — qualifies leads before they call you",
-      "Custom branded booking calendar — no Calendly branding, native to your site",
+      "Custom branded booking calendar — clients book directly from your site",
       "Blog: 9–10 NH-focused SEO articles — organic traffic that works while you sleep",
       "NH health sharing vs. insurance comparison table",
     ],
