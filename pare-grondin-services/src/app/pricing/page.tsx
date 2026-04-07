@@ -38,7 +38,6 @@ const comparisonGroups = [
     rows: [
       { feature: "SEO foundation (schema, meta, sitemap)", starter: true, pro: true, premium: true },
       { feature: "Blog with 9-10 NH-focused AEO articles", starter: false, pro: true, premium: true },
-      { feature: "Google Analytics 4", starter: false, pro: true, premium: true },
     ],
   },
   {
@@ -290,7 +289,7 @@ export default function PricingPage() {
       <section className="section-base">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-            {pricingTiers.map((tier, idx) => {
+            {pricingTiers.map((tier) => {
               const isPro = tier.badge === "Most Popular";
               return (
                 <div key={tier.name} className="relative flex flex-col">

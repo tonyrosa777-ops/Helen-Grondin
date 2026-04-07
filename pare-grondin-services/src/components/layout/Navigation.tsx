@@ -14,6 +14,7 @@ const mainLinks = [
 ];
 
 const moreLinks = [
+  { label: "Savings Calculator", href: "/calculator" },
   { label: "Service Areas", href: "/service-areas" },
   { label: "FAQ", href: "/faq" },
   { label: "Pricing", href: "/pricing", internal: true },
